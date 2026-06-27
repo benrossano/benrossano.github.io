@@ -3,7 +3,7 @@ layout: page
 permalink: /teaching/
 title: teaching
 description: Course materials, schedules, and resources for classes taught.
-nav: true
+nav: false # set back to true once you fill this page in
 nav_order: 6
 calendar: true
 ---
