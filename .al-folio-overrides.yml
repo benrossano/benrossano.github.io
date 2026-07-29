@@ -1,0 +1,22 @@
+# Local overrides of plugin-owned files.
+#
+# Each entry records the owning gem, the gem version the local copy was forked
+# from, and the SHA256 of both the upstream file and the local file. After a
+# `bundle update`, run `bundle exec al-folio upgrade overrides audit` to detect
+# upstream drift, then `overrides diff <path>` / `overrides accept <path>`.
+#
+# NOTE: this file was authored by hand (no Ruby/bundler available on the
+# authoring machine), following the schema in CLAUDE.md. Re-run the audit
+# command to regenerate it canonically.
+overrides:
+  - path: _layouts/bib.liquid
+    owner: al_folio_core
+    version: 1.0.11
+    upstream_sha256: 430311d9b94adf6fb1c2fab7609f6e726efc98e2b50e7b1c4cde0ad654c04506
+    local_sha256: 07b0cea037eca0d9ba754cded8dfb901fc292826c9d06cff472e154f74746ab0
+    reason: >-
+      Link a publication's title to its project page when the bib entry defines
+      a `project_page` field. Upstream renders the title as plain text and has
+      no field that hyperlinks it; `website`/`html` only add buttons to the
+      links row. Single-hunk change at the title block; everything else is
+      verbatim upstream.
