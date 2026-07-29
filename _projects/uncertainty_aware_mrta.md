@@ -2,7 +2,7 @@
 layout: page
 title: Uncertainty-Aware Multi-Robot Task Allocation
 description: Auction-based allocation for heterogeneous robot teams when task requirements are uncertain. Accepted to IROS 2026.
-img: assets/img/mrta_placeholder.png
+img: assets/img/mrta_fig.png
 importance: 1
 category: work
 ---
@@ -13,7 +13,7 @@ Accepted to the IEEE/RSJ International Conference on Intelligent Robots and Syst
 
 [arXiv:2509.22469](https://arxiv.org/abs/2509.22469) · [PDF](https://arxiv.org/pdf/2509.22469)
 
-{% include figure.liquid loading="eager" path="assets/img/mrta_placeholder.png" title="Uncertainty-aware multi-robot task allocation" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid loading="eager" path="assets/img/mrta_fig.png" title="Uncertainty-aware multi-robot task allocation" class="img-fluid rounded z-depth-1" %}
 
 <div class="caption">
     Placeholder figure — to be replaced.
