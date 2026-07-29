@@ -3,12 +3,10 @@
 # for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
 #
 # Icons are ordered below as: email, Google Scholar, GitHub, LinkedIn, RSS.
-# To add Google Scholar / LinkedIn, uncomment the line and drop in the real
-# value -- see the notes on each line for where to find it.
 email: brossano@mit.edu # your email address
-# scholar_userid: XXXXXXXXXXXX # Google Scholar ID: open your profile, copy the value after `user=` in the URL
+scholar_userid: FefSqaoAAAAJ # Google Scholar ID (the `user=` value in your profile URL)
 github_username: benrossano # your GitHub username
-# linkedin_username: your-linkedin # LinkedIn vanity name: the part after /in/ in linkedin.com/in/<this>
+linkedin_username: brossano # LinkedIn vanity name (the part after /in/)
 rss_icon: true # comment this line to hide the RSS icon
 
 
