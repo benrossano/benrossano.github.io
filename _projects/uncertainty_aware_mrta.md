@@ -16,7 +16,10 @@ Accepted to the IEEE/RSJ International Conference on Intelligent Robots and Syst
 {% include figure.liquid loading="eager" path="assets/img/mrta_fig.png" title="Uncertainty-aware multi-robot task allocation" class="img-fluid rounded z-depth-1" %}
 
 <div class="caption">
-    Placeholder figure — to be replaced.
+    A disaster relief scenario. Task requirements are uncertain: the search task may or may not
+    also need debris clearing. Rather than committing a debris robot to it outright or waiting for
+    the requirement to be confirmed, the allocation keeps that capability working nearby, so it can
+    provide quick assistance if it turns out to be needed.
 </div>
 
 ## Overview

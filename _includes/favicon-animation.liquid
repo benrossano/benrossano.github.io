@@ -1,0 +1,64 @@
+{% comment %}
+  Site-owned include (no upstream counterpart).
+
+  Animates the favicon by swapping <link rel="icon"> between pre-rendered PNG
+  frames. This is done in JS on purpose: Chrome does not animate GIF or SVG
+  favicons -- it renders only the first frame -- so frame-swapping is the only
+  approach that actually animates in Chrome.
+
+  The static /assets/img/spot.ico from `site.icon` stays as the no-JS fallback.
+{% endcomment %}
+<script>
+  (function () {
+    var FRAME_COUNT = 8;
+    var FPS = 9;
+    var BASE = '{{ "/assets/favicon/" | relative_url }}';
+
+    // Honour reduced-motion: leave the static icon in place.
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var urls = [];
+    for (var i = 0; i < FRAME_COUNT; i++) {
+      urls.push(BASE + 'spot-' + (i < 10 ? '0' : '') + i + '.png');
+    }
+
+    // Preload so the first cycle doesn't flicker.
+    var loaded = 0;
+    urls.forEach(function (u) {
+      var im = new Image();
+      im.onload = function () { loaded++; };
+      im.src = u;
+    });
+
+    var frame = 0;
+    var timer = null;
+
+    // Replacing the node is more reliable across browsers than mutating href.
+    function paint(href) {
+      var stale = document.querySelectorAll('link[rel~="icon"]');
+      var link = document.createElement('link');
+      link.rel = 'icon';
+      link.type = 'image/png';
+      link.href = href;
+      document.head.appendChild(link);
+      for (var i = 0; i < stale.length; i++) {
+        if (stale[i].parentNode) stale[i].parentNode.removeChild(stale[i]);
+      }
+    }
+
+    function tick() {
+      paint(urls[frame]);
+      frame = (frame + 1) % FRAME_COUNT;
+    }
+
+    function start() { if (!timer) timer = window.setInterval(tick, 1000 / FPS); }
+    function stop() { if (timer) { window.clearInterval(timer); timer = null; } }
+
+    // Don't burn cycles in a background tab.
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop(); else start();
+    });
+
+    if (!document.hidden) start();
+  })();
+</script>
