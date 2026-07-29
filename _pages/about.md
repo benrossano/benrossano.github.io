@@ -26,7 +26,15 @@ I'm a PhD student at the [Massachusetts Institute of Technology](https://www.csa
 
 Previously, I completed my Master's degree working with [Jonathan How](https://www.mit.edu/~jhow/) on multi-robot coordination in unknown and uncertain environments. Before that, I earned my B.S. in Robotics from the [University of Michigan](https://robotics.umich.edu/).
 
-In my free time, I enjoy playing <span class="pop" tabindex="0" aria-describedby="pop-music">music{% include pop-music.liquid %}</span>, <span class="pop" tabindex="0" aria-describedby="pop-sports">sports{% include pop-sports.liquid %}</span>, and <span class="pop" tabindex="0" aria-describedby="pop-travel">travelling{% include pop-travel.liquid %}</span>.
+<!-- The hobby sentence is wrapped in {::nomarkdown} so kramdown passes the popup
+     markup through verbatim. Without it kramdown rewrites the inline SVG:
+     `viewBox` is lowercased to `viewbox` (SVG is case-sensitive, so scaling
+     breaks) and the multi-line map splits the paragraph, leaving a literal
+     `</svg>` in the page. -->
+
+{::nomarkdown}
+<p>In my free time, I enjoy playing <span class="pop" tabindex="0" aria-describedby="pop-music">music{% include pop-music.liquid %}</span>, <span class="pop" tabindex="0" aria-describedby="pop-sports">sports{% include pop-sports.liquid %}</span>, and <span class="pop" tabindex="0" aria-describedby="pop-travel">travelling{% include pop-travel.liquid %}</span>.</p>
+{:/}
 
 {% include pop-styles.liquid %}
 {% include profile-styles.liquid %}

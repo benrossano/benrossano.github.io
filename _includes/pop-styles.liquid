@@ -111,6 +111,17 @@
     vector-effect: non-scaling-stroke;
   }
 
+  /* Visited countries, from _data/travel.yml. Emitted here rather than inside
+     the popup because a <style> element is not valid inside a <p>. */
+  {%- assign visited = site.data.travel.visited -%}
+  {%- if visited and visited.size > 0 %}
+  {% for code in visited %}.travel-map #c-{{ code }}{% unless forloop.last %},
+  {% endunless %}{% endfor %} {
+    fill: var(--global-theme-color);
+    fill-opacity: 1;
+  }
+  {%- endif %}
+
   .pop-caption {
     display: block;
     margin-top: 0.3rem;
