@@ -1,0 +1,145 @@
+{% comment %}
+  Site-owned include (no upstream counterpart).
+
+  Hover/focus popup cards for the hobby words in the about-page intro.
+  Colours come from al-folio's CSS variables so the cards follow light/dark mode.
+{% endcomment %}
+<style>
+  .pop {
+    position: relative;
+    cursor: help;
+    text-decoration: underline dotted;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--global-theme-color);
+  }
+
+  .pop-card {
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    z-index: 30;
+    margin-bottom: 0.65rem;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 12px;
+    background: var(--global-card-bg-color, var(--global-bg-color));
+    box-shadow: 0 10px 28px rgb(0 0 0 / 16%);
+    color: var(--global-text-color);
+    text-decoration: none;
+    line-height: 1;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 6px) scale(0.97);
+    transition:
+      opacity 0.18s ease,
+      transform 0.18s ease,
+      visibility 0.18s;
+  }
+
+  /* Little arrow pointing down at the word. */
+  .pop-card::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 9px;
+    height: 9px;
+    margin: -5px 0 0 -4.5px;
+    background: var(--global-card-bg-color, var(--global-bg-color));
+    border-right: 1px solid var(--global-divider-color);
+    border-bottom: 1px solid var(--global-divider-color);
+    transform: rotate(45deg);
+  }
+
+  .pop:hover .pop-card,
+  .pop:focus .pop-card,
+  .pop:focus-visible .pop-card,
+  .pop:focus-within .pop-card {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0) scale(1);
+  }
+
+  /* Row of icons inside a card. */
+  .pop-icons {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.1rem;
+    white-space: nowrap;
+  }
+
+  .pop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--global-theme-color);
+  }
+
+  .pop-icon svg {
+    width: 34px;
+    height: 34px;
+    display: block;
+  }
+
+  .pop-icon span {
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    color: var(--global-text-color-light, var(--global-text-color));
+  }
+
+  /* The travel card is much wider than the icon cards. */
+  .pop-card--map {
+    width: min(380px, 76vw);
+    padding: 0.7rem 0.7rem 0.5rem;
+  }
+
+  .pop-card--map .travel-map {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Base countries: currentColor at low opacity so the map reads correctly in
+     both light and dark mode without a second set of colour variables. */
+  .pop-card--map .travel-map path {
+    fill: currentColor;
+    fill-opacity: 0.22;
+    stroke: var(--global-card-bg-color, var(--global-bg-color));
+    stroke-width: 0.35;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .pop-caption {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.7rem;
+    line-height: 1.3;
+    text-align: center;
+    color: var(--global-text-color-light, var(--global-text-color));
+    white-space: normal;
+  }
+
+  /* Motion-sensitive visitors get the card without the slide/scale. */
+  @media (prefers-reduced-motion: reduce) {
+    .pop-card {
+      transition: none;
+      transform: translate(-50%, 0);
+    }
+
+    .pop:hover .pop-card,
+    .pop:focus .pop-card,
+    .pop:focus-visible .pop-card,
+    .pop:focus-within .pop-card {
+      transform: translate(-50%, 0);
+    }
+  }
+
+  /* Narrow screens: keep the wide map card inside the viewport. */
+  @media (max-width: 575px) {
+    .pop-card--map {
+      width: min(300px, 88vw);
+    }
+  }
+</style>

@@ -1,0 +1,31 @@
+{%- comment -%}
+  Site-owned include: world map for the "travelling" popup.
+
+  The map (_includes/world-map.liquid) is static geometry with one
+  <path id="c-XXX"> per country, keyed by ISO 3166-1 alpha-3. The visited set
+  lives in _data/travel.yml and becomes a single CSS rule below, so updating
+  the map means editing that list and nothing else.
+  NOTE: this file must not end in a newline (see pop-styles.liquid).
+{%- endcomment -%}
+{%- assign visited = site.data.travel.visited -%}
+<span class="pop-card pop-card--map" id="pop-travel" role="tooltip">
+  {%- if visited and visited.size > 0 -%}
+    {%- capture visited_selector -%}
+      {%- for code in visited -%}.travel-map #c-{{ code }}{%- unless forloop.last -%}, {% endunless -%}{%- endfor -%}
+    {%- endcapture -%}
+    <style>
+      {{ visited_selector }} {
+        fill: var(--global-theme-color);
+        fill-opacity: 1;
+      }
+    </style>
+  {%- endif -%}
+  {% include world-map.liquid %}
+  <span class="pop-caption">
+    {%- if visited and visited.size > 0 -%}
+      {{ visited.size }} {% if visited.size == 1 %}country{% else %}countries{% endif %} visited
+    {%- else -%}
+      countries visited
+    {%- endif -%}
+  </span>
+</span>

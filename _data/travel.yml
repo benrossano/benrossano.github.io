@@ -1,0 +1,9 @@
+# Countries highlighted on the about-page travel map.
+#
+# Use ISO 3166-1 alpha-3 codes (USA, ITA, JPN, GBR, ...). Anything not listed
+# here renders in the map's base colour. Codes that don't match a country in
+# _includes/world-map.liquid are simply ignored.
+#
+# NOTE: seeded with USA only -- replace with the real list.
+visited:
+  - USA
