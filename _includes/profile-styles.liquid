@@ -1,0 +1,29 @@
+{% comment %}
+  Site-owned include (no upstream counterpart).
+
+  Fine-tuning for the about-page profile photo. Upstream gives the floated
+  profile `width: 30%` and `margin-left: 1rem` and nothing else, so the photo's
+  top sits a few pixels above the first line of the intro paragraph, and the
+  circular crop makes the right-hand whitespace read as larger than the left
+  even though the box is flush with the content edge.
+
+  Only applies from 576px up; below that the profile is full width and stacks,
+  where a negative margin would risk horizontal overflow.
+{% endcomment %}
+<style>
+  @media (min-width: 576px) {
+    .profile.float-right {
+      /* A little more breathing room between the text and the photo, and a small
+         nudge right so the circle's visual edge lines up with the page margin. */
+      margin-left: 1.75rem;
+      margin-right: -0.5rem;
+    }
+
+    /* Drop the photo so its top aligns with the first line of the intro text
+       rather than the top of the paragraph box. */
+    .profile figure {
+      margin-top: 0.4rem;
+      margin-bottom: 0;
+    }
+  }
+</style>

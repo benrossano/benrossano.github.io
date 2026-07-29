@@ -7,9 +7,6 @@ profile:
   align: right
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
-  more_info: >
-    <p>Massachusetts Institute of Technology</p>
-    <p>Cambridge, MA</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -29,4 +26,5 @@ I'm a PhD student at the [Massachusetts Institute of Technology](https://www.csa
 
 Previously, I completed my Master's degree working with [Jonathan How](https://www.mit.edu/~jhow/) on multi-robot coordination in unknown and uncertain environments. Before that, I earned my B.S. in Robotics from the [University of Michigan](https://robotics.umich.edu/).
 
+{% include profile-styles.liquid %}
 {% include publication-styles.liquid %}
