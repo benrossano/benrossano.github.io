@@ -22,9 +22,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I'm a PhD student at the [Massachusetts Institute of Technology](https://www.csail.mit.edu/), where I am co-advised by [Nick Roy](https://aeroastro.mit.edu/people/nicholas-roy/) and [Leslie Kaelbling](https://people.csail.mit.edu/lpk/). My research focuses on task planning in a world of large pretrained models and how the structure of classical planning can be combined with the commonsense knowledge these models bring.
+I'm a PhD student at [Massachusetts Institute of Technology](https://www.csail.mit.edu/), where I am co-advised by [Nick Roy](https://aeroastro.mit.edu/people/nicholas-roy/) and [Leslie Kaelbling](https://people.csail.mit.edu/lpk/). My research focuses on task planning in a world of large pretrained models and how the structure of classical planning can be combined with the commonsense knowledge these models bring.
 
-Previously, I completed my Master's degree working with [Jonathan How](https://www.mit.edu/~jhow/) on multi-robot coordination in unknown and uncertain environments. Before that, I earned my B.S. in Robotics from the [University of Michigan](https://robotics.umich.edu/).
+Previously, I completed my Master's degree working with [Jonathan How](https://www.mit.edu/~jhow/) on multi-robot coordination in unknown and uncertain environments. Before that, I earned my B.S. in Robotics from the [University of Michigan](https://robotics.umich.edu/) (Go Blue!).
 
 <!-- The hobby sentence is wrapped in {::nomarkdown} so kramdown passes the popup
      markup through verbatim. Without it kramdown rewrites the inline SVG:
