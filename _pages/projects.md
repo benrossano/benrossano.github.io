@@ -2,10 +2,10 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
-nav: false # set back to true once you fill this page in
+description: Research projects on multi-robot planning and task allocation.
+nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: [work]
 horizontal: false
 ---
 

@@ -1,0 +1,8 @@
+---
+layout: post
+date: 2026-07-28 09:00:00-0400
+inline: true
+related_posts: false
+---
+
+Our paper [Uncertainty-Aware Multi-Robot Task Allocation With Strongly Coupled Inter-Robot Rewards](https://arxiv.org/abs/2509.22469) was accepted to **IROS 2026** 🎉 I'll be presenting it at the conference.

@@ -2,3 +2,18 @@
 ---
 
 @string{aps = {American Physical Society,}}
+
+@inproceedings{rossano2026uncertainty,
+  abbr        = {IROS},
+  title       = {Uncertainty-Aware Multi-Robot Task Allocation With Strongly Coupled Inter-Robot Rewards},
+  author      = {Rossano, Ben and Lim, Jaein and How, Jonathan P.},
+  booktitle   = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year        = {2026},
+  arxiv       = {2509.22469},
+  pdf         = {https://arxiv.org/pdf/2509.22469},
+  website     = {/projects/uncertainty_aware_mrta/},
+  preview     = {mrta_placeholder.png},
+  selected    = {true},
+  bibtex_show = {true},
+  abstract    = {Allocating tasks to heterogeneous robot teams in environments with uncertain task requirements is a fundamentally challenging problem. Redundantly assigning multiple robots to such tasks is overly conservative, while purely reactive strategies risk costly delays in task completion when the uncertain capabilities become necessary. This paper introduces an auction-based task allocation algorithm that explicitly models task requirement uncertainty, leveraging a novel strongly coupled formulation to allocate tasks such that robots with potentially required capabilities are naturally positioned near uncertain tasks. This approach enables robots to remain productive on nearby tasks while simultaneously mitigating large delays in completion time when their capabilities are required. Through a set of simulated disaster relief missions with task deadline constraints, we demonstrate that the proposed approach yields up to a 15\% increase in expected mission value compared to redundancy-based methods. Furthermore, we propose a novel framework to approximate uncertainty arising from unmodeled changes in task requirements by leveraging the natural delay between encountering unexpected environmental conditions and confirming whether additional capabilities are required to complete a task. We show that our approach achieves up to an 18\% increase in expected mission value using this framework compared to reactive methods that do not leverage this delay.},
+}
