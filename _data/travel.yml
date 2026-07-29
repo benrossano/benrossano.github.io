@@ -1,9 +1,39 @@
 # Countries highlighted on the about-page travel map.
 #
-# Use ISO 3166-1 alpha-3 codes (USA, ITA, JPN, GBR, ...). Anything not listed
-# here renders in the map's base colour. Codes that don't match a country in
-# _includes/world-map.liquid are simply ignored.
+# Use ISO 3166-1 alpha-3 codes. Anything not listed renders in the map's base
+# colour, and codes that match nothing are simply ignored.
 #
-# NOTE: seeded with USA only -- replace with the real list.
+# Most countries are outlines in _includes/world-map.liquid. Territories too
+# small to appear in the source dataset (Antigua, Sint Maarten, British Virgin
+# Islands) are point markers in the same file -- to add another, append a
+# <circle id="m-XXX"> there using cx = longitude + 180, cy = 84 - latitude.
+#
+# Note: England is covered by GBR, which is the whole United Kingdom -- the
+# dataset has no separate England outline.
 visited:
+  # North America
   - USA
+  - CAN
+  - MEX
+
+  # Caribbean
+  - ATG # Antigua and Barbuda (point marker)
+  - JAM
+  - SXM # Sint Maarten (point marker)
+  - VGB # British Virgin Islands (point marker)
+
+  # Europe
+  - CZE
+  - ESP
+  - FRA
+  - GBR # England
+  - GRC
+  - HUN
+  - ITA
+  - PRT
+
+  # Asia
+  - IDN
+  - KHM
+  - THA
+  - VNM

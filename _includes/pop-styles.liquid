@@ -28,6 +28,8 @@
     color: var(--global-text-color);
     text-decoration: none;
     line-height: 1;
+    width: max-content;
+    max-width: min(340px, 78vw);
     opacity: 0;
     visibility: hidden;
     transform: translate(-50%, 6px) scale(0.97);
@@ -61,12 +63,14 @@
     transform: translate(-50%, 0) scale(1);
   }
 
-  /* Row of icons inside a card. */
+  /* Row of icons inside a card. Wraps so a card with several icons stays inside
+     the viewport on narrow screens. */
   .pop-icons {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: flex-end;
-    gap: 1.1rem;
-    white-space: nowrap;
+    gap: 0.9rem;
   }
 
   .pop-icon {
@@ -86,6 +90,7 @@
   .pop-icon span {
     font-size: 0.7rem;
     letter-spacing: 0.02em;
+    white-space: nowrap;
     color: var(--global-text-color-light, var(--global-text-color));
   }
 
@@ -111,12 +116,20 @@
     vector-effect: non-scaling-stroke;
   }
 
-  /* Visited countries, from _data/travel.yml. Emitted here rather than inside
-     the popup card, because a style element is not valid inside a paragraph. */
+  /* Point markers for tiny territories stay hidden unless visited. */
+  .pop-card--map .travel-markers circle {
+    display: none;
+  }
+
+  /* Visited places, from _data/travel.yml. Emitted here rather than inside the
+     popup card, because a style element is not valid inside a paragraph. Each
+     code targets both an outline (#c-XXX) and a point marker (#m-XXX); whichever
+     doesn't exist simply matches nothing. */
   {%- assign visited = site.data.travel.visited -%}
   {%- if visited and visited.size > 0 %}
-  {% for code in visited %}.travel-map #c-{{ code }}{% unless forloop.last %},
+  {% for code in visited %}.travel-map #c-{{ code }}, .travel-map #m-{{ code }}{% unless forloop.last %},
   {% endunless %}{% endfor %} {
+    display: inline;
     fill: var(--global-theme-color);
     fill-opacity: 1;
   }
