@@ -400,7 +400,9 @@ filtered_bibtex_keywords:
     project_page,
     selected,
     slides,
+    summary,
     supp,
+    venue,
     video,
     website,
   ]

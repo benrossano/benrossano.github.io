@@ -13,7 +13,7 @@ overrides:
     owner: al_folio_core
     version: 1.0.11
     upstream_sha256: 430311d9b94adf6fb1c2fab7609f6e726efc98e2b50e7b1c4cde0ad654c04506
-    local_sha256: 07b0cea037eca0d9ba754cded8dfb901fc292826c9d06cff472e154f74746ab0
+    local_sha256: 2e4bd4e6b35417e0fe9689318ee6f6f7870f761ab46e3738092c3ebc707dc210
     reason: >-
       Link a publication's title to its project page when the bib entry defines
       a `project_page` field. Upstream renders the title as plain text and has

@@ -11,12 +11,16 @@ nav_order: 2
 <!--
   Your publications are generated automatically from _bibliography/papers.bib.
   Add standard BibTeX entries there (newest first). Helpful al-folio fields:
-    selected = {true}      also features the paper on your homepage
-    abstract = {...}        adds an expandable abstract
-    pdf      = {paper.pdf}  links a PDF placed in assets/pdf/
-    html     = {https...}   links the publisher / arXiv page
-    preview  = {image.png}  thumbnail in assets/img/publication_preview/
+    selected     = {true}       also features the paper on your homepage
+    summary      = {...}        short blurb shown under the links
+    venue        = {IROS}       italic venue line, overrides journal/booktitle
+    arxiv        = {2509.22469} becomes the "Paper" link
+    preview      = {image.png}  thumbnail in assets/img/publication_preview/
+    project_page = {/projects/} makes the title link to a project page
+    abstract     = {...}        kept in the page source and the BibTeX popup
 -->
+
+{% include publication-styles.liquid %}
 
 <!-- Bibsearch Feature -->
 

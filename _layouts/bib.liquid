@@ -158,7 +158,11 @@
     <!-- Journal/Book title and date -->
     {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
     {% assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' %}
-    {% if entry.type == 'article' %}
+    <!-- LOCAL OVERRIDE: an explicit `venue` wins over journal/booktitle, so a preprint can be
+         displayed by the venue that accepted it (e.g. "IROS, 2026") instead of "arXiv preprint ...". -->
+    {% if entry.venue %}
+      {% capture entrytype %}<em>{{ entry.venue }}</em>{% endcapture %}
+    {% elsif entry.type == 'article' %}
       {% capture entrytype %}<em>{{ entry.journal }}</em>{% endcapture %}
     {% elsif proceedings contains entry.type %}
       {% capture entrytype %}<em>In {{ entry.booktitle }}</em>{% endcapture %}
@@ -190,9 +194,13 @@
     <div class="periodical">
       {{ periodical | strip }}
     </div>
-    <div class="periodical">
-      {{ entry.note | strip }}
-    </div>
+    <!-- LOCAL OVERRIDE: when `venue` is set it already carries the acceptance, so the `note` row is
+         suppressed on the page. `note` still ships in the exported BibTeX. -->
+    {% unless entry.venue %}
+      <div class="periodical">
+        {{ entry.note | strip }}
+      </div>
+    {% endunless %}
 
     <!-- Links/Buttons -->
     <div class="links">
@@ -201,14 +209,19 @@
           {%- if entry.award_name %}{{ entry.award_name }}{% else %}Awarded{% endif -%}
         </a>
       {% endif %}
-      {% if entry.abstract %}
-        <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
-      {% endif %}
+      <!-- LOCAL OVERRIDE: no "Abs" toggle; a short `summary` renders under the links instead. -->
       {% if entry.doi %}
         <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0" role="button">DOI</a>
       {% endif %}
+      <!-- LOCAL OVERRIDE: arXiv + PDF collapse into a single "Paper" link, preferring arXiv. -->
       {% if entry.arxiv %}
-        <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>
+        <a href="https://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">Paper</a>
+      {% elsif entry.pdf %}
+        {% if entry.pdf contains '://' %}
+          <a href="{{ entry.pdf }}" class="btn btn-sm z-depth-0" role="button">Paper</a>
+        {% else %}
+          <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">Paper</a>
+        {% endif %}
       {% endif %}
       {% if entry.hal %}
         <a href="https://hal.science/{{ entry.hal }}" class="btn btn-sm z-depth-0" role="button">HAL</a>
@@ -223,13 +236,7 @@
           <a href="{{ entry.html | prepend: '/assets/html/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
         {% endif %}
       {% endif %}
-      {% if entry.pdf %}
-        {% if entry.pdf contains '://' %}
-          <a href="{{ entry.pdf }}" class="btn btn-sm z-depth-0" role="button">PDF</a>
-        {% else %}
-          <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">PDF</a>
-        {% endif %}
-      {% endif %}
+      <!-- LOCAL OVERRIDE: the standalone PDF button is folded into "Paper" above. -->
       {% if entry.supp %}
         {% if entry.supp contains '://' %}
           <a href="{{ entry.supp }}" class="btn btn-sm z-depth-0" role="button">Supp</a>
@@ -266,6 +273,10 @@
         <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>
       {% endif %}
     </div>
+    <!-- LOCAL OVERRIDE: short plain-language blurb under the links, in place of the Abs toggle. -->
+    {% if entry.summary %}
+      <div class="summary">{{ entry.summary | markdownify }}</div>
+    {% endif %}
     {% if site.enable_publication_badges %}
       {% assign entry_has_altmetric_badge = false %}
       {% if entry.altmetric and entry.altmetric != 'false' %}

@@ -1,0 +1,70 @@
+{% comment %}
+  Site-owned include (no upstream counterpart).
+
+  Layout for publication entries: a wide thumbnail column beside the entry text.
+  This has to be written as explicit CSS rather than utility classes -- upstream
+  emits Bootstrap grid classes (`row`, `col-sm-2`, `col-sm-8`) but this site runs
+  the Tailwind style engine with `compat.bootstrap.enabled: false`, so none of
+  those classes have any CSS behind them and the columns would just stack.
+
+  Included from _pages/publications.md and _pages/about.md, both of which render
+  a bibliography inside a `.publications` wrapper.
+{% endcomment %}
+<style>
+  .publications ol.bibliography li > .row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Thumbnail column: the "larger picture". */
+  .publications ol.bibliography li > .row > .abbr {
+    flex: 0 0 34%;
+    max-width: 34%;
+  }
+
+  .publications ol.bibliography li > .row > div:not(.abbr) {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .publications ol.bibliography li .preview {
+    display: block;
+    width: 100%;
+  }
+
+  .publications ol.bibliography li .abbr figure,
+  .publications ol.bibliography li .abbr picture,
+  .publications ol.bibliography li .abbr img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  /* Short blurb under the links, in place of the collapsible abstract. */
+  .publications ol.bibliography li .summary {
+    margin-top: 0.6rem;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .publications ol.bibliography li .summary p {
+    margin: 0;
+  }
+
+  /* Stack on narrow screens so the thumbnail isn't squeezed to nothing. */
+  @media (max-width: 640px) {
+    .publications ol.bibliography li > .row {
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .publications ol.bibliography li > .row > .abbr {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+</style>
