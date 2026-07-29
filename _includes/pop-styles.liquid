@@ -112,7 +112,7 @@
   }
 
   /* Visited countries, from _data/travel.yml. Emitted here rather than inside
-     the popup because a <style> element is not valid inside a <p>. */
+     the popup card, because a style element is not valid inside a paragraph. */
   {%- assign visited = site.data.travel.visited -%}
   {%- if visited and visited.size > 0 %}
   {% for code in visited %}.travel-map #c-{{ code }}{% unless forloop.last %},
