@@ -1,3 +1,9 @@
+"arXiv":
+  url: https://arxiv.org
+  color: "#b31b1b"
+
+# Kept for when the IROS proceedings are published and the entry switches to
+# @inproceedings with an abbr of IROS.
 "IROS":
   url: https://www.ieee-ras.org/conferences-workshops/fully-sponsored/iros
   color: "#00369f"

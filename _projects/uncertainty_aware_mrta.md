@@ -46,13 +46,14 @@ Evaluated on simulated disaster relief missions with task deadline constraints:
 
 ## Citation
 
+Please cite the arXiv version until the IROS proceedings are published:
+
 ```bibtex
-@inproceedings{rossano2026uncertainty,
-  title     = {Uncertainty-Aware Multi-Robot Task Allocation With Strongly Coupled Inter-Robot Rewards},
-  author    = {Rossano, Ben and Lim, Jaein and How, Jonathan P.},
-  booktitle = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-  year      = {2026},
+@article{rossano2025uncertainty,
+  title   = {Uncertainty-Aware Multi-Robot Task Allocation With Strongly Coupled Inter-Robot Rewards},
+  author  = {Rossano, Ben and Lim, Jaein and How, Jonathan P.},
+  journal = {arXiv preprint arXiv:2509.22469},
+  year    = {2025},
+  note    = {Accepted to IROS 2026},
 }
 ```
-
-Proceedings page numbers and DOI will be added once they are available.
