@@ -36,6 +36,8 @@ Previously, I completed my Master's degree working with [Jonathan How](https://w
 <p>In my free time, I enjoy <span class="pop" tabindex="0" aria-describedby="pop-music">music{% include pop-music.liquid %}</span>, <span class="pop" tabindex="0" aria-describedby="pop-sports">sports{% include pop-sports.liquid %}</span>, and <span class="pop" tabindex="0" aria-describedby="pop-travel">travelling{% include pop-travel.liquid %}</span>.</p>
 {:/}
 
+Check out my pop/rock cover band, [Seldom Chalant](https://www.instagram.com/seldomchalant/)!
+
 {% include pop-styles.liquid %}
 {% include profile-styles.liquid %}
 {% include publication-styles.liquid %}
