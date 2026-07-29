@@ -33,7 +33,7 @@ Previously, I completed my Master's degree working with [Jonathan How](https://w
      `</svg>` in the page. -->
 
 {::nomarkdown}
-<p>In my free time, I enjoy playing <span class="pop" tabindex="0" aria-describedby="pop-music">music{% include pop-music.liquid %}</span>, <span class="pop" tabindex="0" aria-describedby="pop-sports">sports{% include pop-sports.liquid %}</span>, and <span class="pop" tabindex="0" aria-describedby="pop-travel">travelling{% include pop-travel.liquid %}</span>.</p>
+<p>In my free time, I enjoy <span class="pop" tabindex="0" aria-describedby="pop-music">music{% include pop-music.liquid %}</span>, <span class="pop" tabindex="0" aria-describedby="pop-sports">sports{% include pop-sports.liquid %}</span>, and <span class="pop" tabindex="0" aria-describedby="pop-travel">travelling{% include pop-travel.liquid %}</span>.</p>
 {:/}
 
 {% include pop-styles.liquid %}
