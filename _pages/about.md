@@ -33,10 +33,8 @@ Previously, I completed my Master's degree working with [Jonathan How](https://w
      `</svg>` in the page. -->
 
 {::nomarkdown}
-<p>In my free time, I enjoy <span class="pop" tabindex="0" aria-describedby="pop-music">music{% include pop-music.liquid %}</span>, <span class="pop" tabindex="0" aria-describedby="pop-sports">sports{% include pop-sports.liquid %}</span>, and <span class="pop" tabindex="0" aria-describedby="pop-travel">travelling{% include pop-travel.liquid %}</span>.</p>
+<p>In my free time, I enjoy <span class="pop" tabindex="0" aria-describedby="pop-music">music{% include pop-music.liquid %}</span>, <span class="pop" tabindex="0" aria-describedby="pop-sports">sports{% include pop-sports.liquid %}</span>, and <span class="pop" tabindex="0" aria-describedby="pop-travel">travelling{% include pop-travel.liquid %}</span>. Check out my pop/rock cover band, <a href="https://www.instagram.com/seldomchalant/">Seldom Chalant</a>!</p>
 {:/}
-
-Check out my pop/rock cover band, [Seldom Chalant](https://www.instagram.com/seldomchalant/)!
 
 {% include pop-styles.liquid %}
 {% include profile-styles.liquid %}
