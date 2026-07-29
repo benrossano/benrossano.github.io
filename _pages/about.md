@@ -26,13 +26,6 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I'm Ben Rossano, a PhD student at the Massachusetts Institute of Technology (MIT).
+I'm Ben Rossano, a PhD student at the Massachusetts Institute of Technology, where I am co-advised by [Nick Roy](https://aeroastro.mit.edu/people/nicholas-roy/) and [Leslie Kaelbling](https://people.csail.mit.edu/lpk/). My research asks what task planning should look like in a world of foundation models — how the structure, generality, and guarantees that classical planning offers can be combined with the broad commonsense knowledge these models bring, so that robots can act deliberately over long horizons in environments nobody specified for them in advance.
 
-<!-- TODO: Replace this with a real bio. A good academic bio answers, in 2–4 sentences:
-  - Your department / lab / advisor at MIT
-  - Your research area and the questions you work on
-  - What you're currently focused on, and prior background (undergrad, interests) -->
-
-My research focuses on _[your research area]_. I'm interested in _[the questions you care about]_.
-
-To add a profile photo, drop an image at `assets/img/prof_pic.jpg`. Your publications are generated automatically from `_bibliography/papers.bib`, and news items live in the `_news/` folder.
+Previously, I completed my Master's degree in the [Aerospace Controls Lab](https://acl.mit.edu/), working with [Jonathan How](https://www.mit.edu/~jhow/) on multi-robot task allocation under uncertainty. Before that, I earned my B.S. in Robotics from the [University of Michigan](https://robotics.umich.edu/).
