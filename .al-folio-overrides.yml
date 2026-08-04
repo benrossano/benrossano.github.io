@@ -39,3 +39,15 @@ overrides:
       script loads on every page. al_folio_core exposes no head/scripts hook
       (only _includes/hook/bib.liquid), and this is the smallest gem-owned
       include rendered site-wide. Nothing else is changed.
+  - path: _includes/head.liquid
+    owner: al_folio_core
+    version: 1.0.11
+    upstream_sha256: f4e1a5a93ba324f05760652013eb0d44769ec932477a5a0afa70c271153b8278
+    local_sha256: 44810dbd058133ceb5277ded3fe4148f3f7effa5d6c1665ac567658b0c416520
+    reason: >-
+      Seed the stored theme preference to "light" before initTheme() runs, so
+      visitors whose OS is in dark mode still get the light site by default.
+      Upstream defaults the setting to "system" and writes it on first visit,
+      so a one-time version-keyed marker is used rather than an "only if unset"
+      check. Single added hunk in the dark-mode block; the theme toggle itself
+      is unchanged.

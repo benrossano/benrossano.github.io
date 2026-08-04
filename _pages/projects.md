@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Research projects on multi-robot planning and task allocation.
+description:
 nav: true
 nav_order: 3
 display_categories: [work]
