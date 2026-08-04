@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Uncertainty-Aware Multi-Robot Task Allocation
-description: Auction-based allocation for heterogeneous robot teams when task requirements are uncertain. Accepted to IROS 2026.
+description: Auction-based allocation for heterogeneous robot teams when task requirements are uncertain.
 img: assets/img/mrta_fig.png
 importance: 1
 category: work
@@ -9,7 +9,7 @@ category: work
 
 **Ben Rossano, Jaein Lim, Jonathan P. How**
 
-Accepted to the IEEE/RSJ International Conference on Intelligent Robots and Systems (**IROS**), 2026.
+Accepted to the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2026.
 
 [arXiv:2509.22469](https://arxiv.org/abs/2509.22469) · [PDF](https://arxiv.org/pdf/2509.22469)
 
@@ -57,6 +57,5 @@ Please cite the arXiv version until the IROS proceedings are published:
   author  = {Rossano, Ben and Lim, Jaein and How, Jonathan P.},
   journal = {arXiv preprint arXiv:2509.22469},
   year    = {2026},
-  note    = {Accepted to IROS 2026},
 }
 ```

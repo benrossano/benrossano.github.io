@@ -72,9 +72,6 @@ GEM
     al_newsletter (1.0.0)
       jekyll (>= 3.9, < 5.0)
       liquid (>= 4.0, < 6.0)
-    al_search (1.0.2)
-      jekyll (>= 3.9, < 5.0)
-      liquid (>= 4.0, < 6.0)
     base64 (0.3.0)
     benchmark (0.5.0)
     bibtex-ruby (6.2.0)
@@ -360,7 +357,6 @@ DEPENDENCIES
   al_img_tools (= 1.0.2)
   al_math (= 1.0.1)
   al_newsletter (= 1.0.0)
-  al_search (= 1.0.2)
   classifier-reborn
   css_parser
   jekyll
@@ -405,7 +401,6 @@ CHECKSUMS
   al_img_tools (1.0.2) sha256=1b86e860984d2f714e5a7d715e79722f280e90cc6739375a9119fc9dcb5bb8d6
   al_math (1.0.1) sha256=c66d402821a9efb997e63501654116ab9683401cb80ac9365c4a013afed4f2c4
   al_newsletter (1.0.0) sha256=27c914f5fcd0c7fac51a513ab11de7123f05de7ba834206a68ddf2588ede96d3
-  al_search (1.0.2) sha256=6bad2de6fdabaa0bb48b348f0043960672fc45d4c61f822bb68c2e7bf3c8cbb5
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   benchmark (0.5.0) sha256=465df122341aedcb81a2a24b4d3bd19b6c67c1530713fd533f3ff034e419236c
   bibtex-ruby (6.2.0) sha256=d610eba78d6adf503a843daf144644449fb34e7c3f4a75e9ab67fae5dfd7c69a
