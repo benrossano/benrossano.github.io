@@ -2,6 +2,7 @@
 layout: page
 title: Communication-Constrained Multi-Robot Exploration
 description: Adaptive communication windows help robot teams share maps without costly detours from exploration.
+img: assets/img/mace_communication_exploration.png
 importance: 1
 category: work
 ---
@@ -11,6 +12,12 @@ category: work
 Accepted to the [Workshop and Competition on Intelligent Information Gathering for Single and Multi-Robot Systems](https://frostlab.byu.edu/IIG-workshop/) at IROS 2026.
 
 [arXiv:2609.12502](https://arxiv.org/abs/2609.12502) · [PDF](https://arxiv.org/pdf/2609.12502)
+
+{% include figure.liquid loading="eager" path="assets/img/mace_communication_exploration.png" title="Communication-aware multi-robot exploration" alt="Robots exploring separate map regions, with frontier routes and points where they can reconnect" class="img-fluid rounded z-depth-1" %}
+
+<div class="caption">
+    The orange and red robots consider unexplored frontiers along routes toward communication points (purple), balancing new exploration against the travel needed to reconnect.
+</div>
 
 ## Overview
 
