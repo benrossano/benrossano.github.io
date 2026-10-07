@@ -14,11 +14,9 @@ arXiv preprint, 2026.
 
 ## Overview
 
-Multi-robot teams can explore an unknown environment faster by spreading out, but they also need to share what they discover. When communication is intermittent, robots face a tradeoff: meeting too often takes time away from exploration, while meeting too rarely can lead them to cover the same ground twice.
+Multi-robot teams can explore unknown environments faster by spreading out, but they also need to share what they discover. When communication is intermittent, robots face a tradeoff: meeting too often takes time away from exploration, while meeting too rarely can lead them to revisit areas their teammates have already explored.
 
-This work introduces **MACE**, a decentralized exploration framework that makes communication decisions at scheduled windows. Each robot considers previously identified communication locations and plans a route through unexplored frontiers toward one of them. It estimates how much exploration it can complete along the way and whether the remaining detour is worthwhile. If no useful route is available, the robot keeps exploring and checks again at the next window.
-
-In simulations across environments with different sizes and layouts, MACE reduced total exploration time by up to 23% compared with existing communication-constrained strategies. It communicated more often than purely opportunistic exploration while avoiding much of the travel required by fixed rendezvous schedules.
+Existing methods either schedule mandatory rendezvous at fixed intervals or rely on chance encounters between robots. MACE keeps the structure of scheduled communication windows without requiring robots to meet at every one. At each window, a robot estimates the cost of reaching a previously identified communication location, accounting for both the travel distance and the unexplored frontiers it can visit along the way. If the detour is worthwhile, the robot attempts to reconnect. Otherwise, it continues exploring and reassesses at the next window.
 
 ## Citation
 
