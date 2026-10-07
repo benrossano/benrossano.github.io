@@ -3,7 +3,7 @@ layout: page
 title: Uncertainty-Aware Multi-Robot Task Allocation
 description: An auction-based allocation framework for heterogeneous robot teams when task requirements are uncertain.
 img: assets/img/mrta_fig.png
-importance: 1
+importance: 2
 category: work
 ---
 
